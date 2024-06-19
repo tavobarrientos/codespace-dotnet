@@ -3,4 +3,7 @@
 GET {{tavobarrientos.api_HostAddress}}/weatherforecast/
 Accept: application/json
 
+GET {{tavobarrientos.api_HostAddress}}/
+Accept: application/json
+
 ###

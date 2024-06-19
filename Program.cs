@@ -36,7 +36,10 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/", () => "Hello World from Codespaces!").WithName("GetHelloWorld").WithOpenApi();;
+app.MapGet("/", () => new HelloWorld("Hello Codespaces!"))
+    .WithName("GetHelloWorld")
+    .WithDescription("A simple hello world endpoint.")
+    .WithOpenApi();
 
 app.Run();
 
@@ -44,3 +47,5 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+record HelloWorld(string Message);
